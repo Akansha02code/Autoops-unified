@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+sqlalchemy
+psycopg2-binary
+pydantic
+langgraph
+langchain-google-genai
+google-generativeai
+groq
+pytesseract
+pdf2image
+python-multipart
