@@ -3,14 +3,19 @@ import { useState } from "react";
 
 export default function Home() {
   const [status, setStatus] = useState<string>("not checked yet");
+  const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://127.0.0.1:8000";
 
   async function checkBackend() {
     try {
-      const res = await fetch("http://localhost:8000/health");
+      const res = await fetch(`${apiBase}/health`);
+      if (!res.ok) {
+        throw new Error(`backend responded with ${res.status}`);
+      }
       const data = await res.json();
       setStatus(JSON.stringify(data));
     } catch (e) {
-      setStatus("backend not reachable - is uvicorn running on :8000?");
+      const msg = e instanceof Error ? e.message : "unknown error";
+      setStatus(`backend not reachable (${msg})`);
     }
   }
 
