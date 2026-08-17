@@ -1,5 +1,5 @@
 # AutoOps - Unified Multi-Agent Platform (Day 1 skeleton)
-
+venv\Scripts\Activate.ps1
 ## Structure
 ```
 backend/    FastAPI app (uvicorn)
