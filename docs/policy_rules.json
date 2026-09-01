@@ -1,0 +1,4 @@
+[
+  { "id": "cfo_threshold", "field": "price", "condition": "greater_than", "value": 10000, "action": "require_cfo_approval" },
+  { "id": "high_value_review", "field": "price", "condition": "greater_than", "value": 30000, "action": "flag_for_manual_review" }
+]
