@@ -1,0 +1,8 @@
+[
+  { "item": "laptop", "unit_price": 58000, "department": "IT" },
+  { "item": "desktop computer", "unit_price": 42000, "department": "IT" },
+  { "item": "monitor", "unit_price": 9500, "department": "IT" },
+  { "item": "office chair", "unit_price": 6500, "department": "Admin" },
+  { "item": "printer", "unit_price": 15000, "department": "Admin" },
+  { "item": "projector", "unit_price": 32000, "department": "Admin" }
+]

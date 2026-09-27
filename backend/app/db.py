@@ -1,9 +1,13 @@
 """
-Database models - the shared "case" table both the document path and the
-request path write into.
+Database models - the shared "case" table both the document path and
+the request path write into.
 
 Run once to create the table:
     python -m app.db
+
+Note: price is always stored in INR (the base currency policy rules
+are written in) - original_currency / original_price / exchange_rate
+preserve what the source document actually stated, for transparency.
 """
 import os
 import uuid
@@ -31,7 +35,10 @@ class Case(Base):
     quantity = Column(Integer)
     department = Column(String)
     destination = Column(String, nullable=True)
-    price = Column(Float)
+    price = Column(Float)                          # always stored in INR
+    original_currency = Column(String, nullable=True)   # e.g. "USD" - null if source was already INR
+    original_price = Column(Float, nullable=True)       # amount as stated in the source document
+    exchange_rate = Column(Float, nullable=True)        # rate used to convert to INR
     requester = Column(String, nullable=True)
     status = Column(String, default="pending_extraction")
     policy_flags = Column(JSON, default=list)
@@ -41,4 +48,4 @@ class Case(Base):
 
 if __name__ == "__main__":
     Base.metadata.create_all(engine)
-    print("cases table created (or already existed)")
+    print("cases table created/verified (existing tables are not altered automatically)")
