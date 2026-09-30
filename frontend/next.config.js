@@ -1,0 +1,11 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async rewrites() {
+    return [{
+      source: "/api/backend/:path*",
+      destination: `${process.env.AUTOOPS_BACKEND_URL ?? "http://127.0.0.1:8000"}/:path*`,
+    }];
+  },
+};
+
+module.exports = nextConfig;

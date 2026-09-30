@@ -1,4 +1,4 @@
-                                """
+"""
 Skeleton LangGraph pipeline - this is the "smallest possible end-to-end
 skeleton" from the roadmap: one hardcoded input -> one LLM call ->
 one policy check -> a stub approval -> a stub DB insert.

@@ -12,7 +12,7 @@ Usage: import convert_to_inr(amount, currency_code) from elsewhere.
 # with a live FX API call (e.g. exchangerate-api.com) in a later phase.
 FX_TO_INR = {
     "INR": 1.0,
-    "USD": 83.5,
+    "USD": 95.95,
     "EUR": 90.0,
     "GBP": 105.0,
 }

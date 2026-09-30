@@ -139,11 +139,7 @@ def generate_invoice(case_id: str):
         story.append(total_table)
         story.append(Spacer(1, 4))
 
-        if case.policy_flags:
-            flags_text = ", ".join(f["action"].replace("_", " ").title() for f in case.policy_flags)
-            story.append(Paragraph(
-                f"<font size=8 color='#8A6200'><b>Policy notes:</b> {flags_text}</font>",
-                styles["Normal"]))
+       
 
         story.append(Spacer(1, 40))
         story.append(HRFlowable(width="100%", thickness=0.6, color=colors.HexColor("#CCCCCC")))

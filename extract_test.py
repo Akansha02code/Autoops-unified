@@ -91,7 +91,7 @@ def extract_structured(ocr_text: str) -> dict:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python extract_text.py <path_to_image>")
+        print("Usage: python extract_text.py <file_path>")
         sys.exit(1)
 
     path = sys.argv[1]
